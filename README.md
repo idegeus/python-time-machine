@@ -1,5 +1,5 @@
 # python-time-machine
-Simple python application to change the local computer time using a tkinter GUI. If you're just here for the application,download the most recent [release](https://github.com/ivotje50/python-time-machine/releases/download/0.1.0/changetime.exe). The GUI is always-on-top.
+Simple python application to change the local computer time using a tkinter GUI. If you're just here for the application,download the most recent [release](https://github.com/ivotje50/python-time-machine/releases/download/0.1.1/changetime.exe). The GUI is always-on-top.
 
 ![alt text](https://github.com/ivotje50/python-time-machine/raw/master/screenshot.png "screenshot")
 
