@@ -11,3 +11,6 @@ The screen lets you change local computer time in steps of 5, 15 and 60 minutes 
 There are very few requirements, install using ```pip install -r requirements.txt```. 
 
 Then just run the main application. 
+
+## Building
+When releasing a new build, please compile using [auto-py-to-exe](https://github.com/brentvollebregt/auto-py-to-exe) and submit a new release.
