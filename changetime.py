@@ -1,9 +1,11 @@
 import tkinter as tk
 import time
 import datetime
+import ntplib
 import win32api
 import sys
 import random
+from dateutil import tz
 
 # Setting up tkinter and configuring styling
 root = tk.Tk()
@@ -54,8 +56,13 @@ def set_randomised_time(diff_minutes):
 
 # Reset time to initial loading state	
 def reset_time():
-	global delta_time_change
-	settime(delta_time_change * -1)
+    global delta_time_change
+    delta_time_change = 0
+    c = ntplib.NTPClient()
+    response = c.request('firewall.flissinger.local', version=3)
+    cur = datetime.datetime.fromtimestamp(response.tx_time).replace(tzinfo=tz.gettz('Europe/Amsterdam'))
+    cur = cur.astimezone(tz.tzutc())
+    win32api.SetSystemTime(cur.year, cur.month, 0, cur.day, cur.hour, cur.minute, cur.second, 0)
 
 # Reset time and destroy window
 def destroy_window(): 
