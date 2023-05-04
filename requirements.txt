@@ -1,1 +1,3 @@
 datetime
+ntplib
+pypiwin32
